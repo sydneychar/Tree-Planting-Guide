@@ -72,11 +72,10 @@ def index(state: State) -> Page:
 @route
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
-    content = [
-        "# Tree Library\n"
-    ]
+    content = []
+    content.append("# Tree Library\n")
 
-    # LOOP REQUIREMENT
+    
     for tree in state.trees:
         content.append(tree.name + "\n")
 
@@ -356,23 +355,19 @@ def remove_favorite(state: State) -> Page:
 
     return tree_info(state)
 
+from typing import Any
 
 @route
 def favorites(state: State) -> Page:
     """this will show you a list of trees that are in your
 favorites"""
 
-    content = [
-        "# Favorite Trees",
-
-        "\nFavorites Count: "
-        + str(state.favorites_count) + "\n"]
+    content: list[Any] = ["# Favorite Trees","\nFavorites Count:"+ str(state.favorites_count) + "\n"]
 
     found = False
 
-    # LOOP REQUIREMENT
-    for tree in state.trees:
 
+    for tree in state.trees:
         if tree.favorite:
 
             content.append(tree.name + "\n")
