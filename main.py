@@ -72,12 +72,12 @@ def index(state: State) -> Page:
 @route
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
-    content = []
-    content.append("# Tree Library\n")
+    content = [
+    Header("Tree Library")]
 
     
     for tree in state.trees:
-        content.append(tree.name + "\n")
+        content.append(Text(tree.name))
 
     content.append(Button("View Red Maple", red_maple))
     content.append(Button("View White Oak", white_oak))
@@ -107,7 +107,7 @@ def tree_library(state: State) -> Page:
 
 @route
 def red_maple(state: State) -> Page:
-    """"this selects the red maple tree and
+    """this selects the red maple tree and
     displays its information page"""
     state.selected_tree = "Red Maple"
     return tree_info(state)
@@ -115,7 +115,7 @@ def red_maple(state: State) -> Page:
 
 @route
 def white_oak(state: State) -> Page:
-    """"this selects the white oak tree and
+    """this selects the white oak tree and
     displays its information page"""
     state.selected_tree = "White Oak"
     return tree_info(state)
@@ -123,28 +123,28 @@ def white_oak(state: State) -> Page:
 
 @route
 def river_birch(state: State) -> Page:
-    """"this selects the river birch tree and
+    """this selects the river birch tree and
     displays its information page"""
     state.selected_tree = "River Birch"
     return tree_info(state)
 
 @route
 def dogwood(state: State) -> Page:
-    """"this selects the dogwood tree and
+    """this selects the dogwood tree and
     displays its information page"""
     state.selected_tree = "Dogwood"
     return tree_info(state)
 
 @route
 def eastern_redbud(state: State) -> Page:
-    """"this selects the eastern redbud tree and
+    """this selects the eastern redbud tree and
     displays its information page"""
     state.selected_tree = "Eastern Redbud"
     return tree_info(state)
 
 @route
 def sugar_maple(state: State) -> Page:
-    """"this selects the sugar maple tree and
+    """this selects the sugar maple tree and
     displays its information page"""
     state.selected_tree = "Sugar Maple"
     return tree_info(state)
@@ -158,91 +158,91 @@ def american_elm(state: State) -> Page:
 
 @route
 def tulip_poplar(state: State) -> Page:
-    """"this selects the tulip poplar tree and
+    """this selects the tulip poplar tree and
     displays its information page"""
     state.selected_tree = "Tulip Poplar"
     return tree_info(state)
 
 @route
 def magnolia(state: State) -> Page:
-    """"this selects the southern magnolia tree and
+    """this selects the southern magnolia tree and
     displays its information page"""
     state.selected_tree = "Southern Magnolia"
     return tree_info(state)
 
 @route
 def japanese_maple(state: State) -> Page:
-    """"this selects the japanese maple tree and
+    """this selects the japanese maple tree and
     displays its information page"""
     state.selected_tree = "Japanese Maple"
     return tree_info(state)
 
 @route
 def blue_spruce(state: State) -> Page:
-    """"this selects the colorado blue spruce tree and
+    """this selects the colorado blue spruce tree and
     displays its information page"""
     state.selected_tree = "Colorado Blue Spruce"
     return tree_info(state)
 
 @route
 def weeping_willow(state: State) -> Page:
-    """"this selects the weeping willow tree and
+    """this selects the weeping willow tree and
     displays its information page"""
     state.selected_tree = "Weeping Willow"
     return tree_info(state)
 
 @route
 def bald_cypress(state: State) -> Page:
-    """"this selects the bald cypress tree and
+    """this selects the bald cypress tree and
     displays its information page"""
     state.selected_tree = "Bald Cypress"
     return tree_info(state)
 
 @route
 def black_cherry(state: State) -> Page:
-    """"this selects the black cherry tree and
+    """this selects the black cherry tree and
     displays its information page"""
     state.selected_tree = "Black Cherry"
     return tree_info(state)
 
 @route
 def northern_red_oak(state: State) -> Page:
-    """"this selects the northern red oak tree and
+    """this selects the northern red oak tree and
     displays its information page"""
     state.selected_tree = "Northern Red Oak"
     return tree_info(state)
 
 @route
 def silver_maple(state: State) -> Page:
-    """"this selects the silver maple tree and
+    """this selects the silver maple tree and
     displays its information page"""
     state.selected_tree = "Silver Maple"
     return tree_info(state)
 
 @route
 def flowering_crabapple(state: State) -> Page:
-    """"this selects the flowering crabapple tree and
+    """this selects the flowering crabapple tree and
     displays its information page"""
     state.selected_tree = "Flowering Crabapple"
     return tree_info(state)
 
 @route
 def green_ash(state: State) -> Page:
-    """"this selects the green ash tree and
+    """this selects the green ash tree and
     displays its information page"""
     state.selected_tree = "Green Ash"
     return tree_info(state)
 
 @route
 def ponderosa_pine(state: State) -> Page:
-    """"this selects the ponderosa pine tree and
+    """this selects the ponderosa pine tree and
     displays its information page"""
     state.selected_tree = "Ponderosa Pine"
     return tree_info(state)
 
 @route
 def american_sycamore(state: State) -> Page:
-    """"this selects the american sycamore tree and
+    """this selects the american sycamore tree and
     displays its information page"""
     state.selected_tree = "American Sycamore"
     return tree_info(state)
@@ -375,7 +375,7 @@ favorites"""
             found = True
 
     if not found:
-        content.append("No favorite trees selected.\n")
+        content.append("No favorite trees selected.")
 
     content.append(Button("Home", index))
 
@@ -436,6 +436,10 @@ def set_zone6(state: State) -> Page:
     state.planting_zone = "Zone 6"
     return zone_recommendations(state)
 
+set_site_information(
+    "Tree Planting Guide",
+    "A guide for selecting and caring for trees.",
+    "Your Name")
 
 start_server(State( "","","Zone 5",0,START_TREES))
 
