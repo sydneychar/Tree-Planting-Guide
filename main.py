@@ -436,10 +436,6 @@ def set_zone6(state: State) -> Page:
     state.planting_zone = "Zone 6"
     return zone_recommendations(state)
 
-set_site_information(
-    "Tree Planting Guide",
-    "A guide for selecting and caring for trees.",
-    "Your Name")
 
 start_server(State( "","","Zone 5",0,START_TREES))
 
