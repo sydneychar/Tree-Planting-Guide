@@ -76,7 +76,7 @@ def index(state: State) -> Page:
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
     content = [
-        "Tree Library\n"
+        " 🌲 Tree Library\n"
     ]
 
     # LOOP REQUIREMENT
