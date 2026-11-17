@@ -60,9 +60,9 @@ def find_tree(state: State):
 def index(state: State) -> Page:
     """displays the home page and main navigation menu"""
     return Page(state, [
-        "Tree Planting Guide",
+        "Welcome to the Tree Planting Guide,",
 
-        "Learn how to plant a tree properly!",
+        "learn how to plant a tree properly!",
 
         "Click 'Tree Library' to start learning",
 
