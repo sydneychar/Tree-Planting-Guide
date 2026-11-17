@@ -83,9 +83,9 @@ def tree_library(state: State) -> Page:
     for tree in state.trees:
         content.append(tree.name + "\n")
 
-    content.append(Button("View Red Maple", red_maple))
-    content.append(Button("View White Oak", white_oak))
-    content.append(Button("View River Birch", river_birch))
+    content.append(Button("Red Maple", red_maple))
+    content.append(Button("White Oak", white_oak))
+    content.append(Button("River Birch", river_birch))
     content.append(Button("Dogwood", dogwood))
     content.append(Button("Eastern Redbud", eastern_redbud))
     content.append(Button("Sugar Maple", sugar_maple))
