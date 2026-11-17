@@ -76,7 +76,7 @@ def index(state: State) -> Page:
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
     content = [
-        " 🌲 Tree Library"
+        " 🌲 Tree Library\n"
     ]
 
     # LOOP REQUIREMENT
@@ -266,7 +266,7 @@ def tree_info(state: State) -> Page:
         favorite_text = "Yes"
 
     return Page(state, [
-        "# Tree Information",
+        " 🌲 Tree Information",
 
         "\nName: " + tree.name,
         "\nSunlight: " + tree.sunlight,
@@ -313,7 +313,7 @@ def planting_instructions(state: State) -> Page:
 def care_tips(state: State) -> Page:
     """Displays basic care and maintenance tips for trees"""
     return Page(state, [
-        "# Care Tips",
+        " 🌲 Care Tips",
 
         "\n• Water regularly",
         "\n• Keep weeds away",
@@ -366,7 +366,7 @@ def favorites(state: State) -> Page:
 favorites"""
 
     content = [
-        "# Favorite Trees",
+        " 🌲 Favorite Trees",
 
         "\nFavorites Count: "
         + str(state.favorites_count) + "\n"]
