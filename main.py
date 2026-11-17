@@ -61,9 +61,9 @@ def index(state: State) -> Page:
     return Page(state, [
         "Tree Planting Guide",
 
-        "\nWelcome to the Tree Planting Guide!",
+        "\nLearn how to plant trees properly!",
 
-        "\nThis site helps gardeners find trees and learn how to care for them.\n",
+        "\nThis site helps gardeners learn how to care for trees.\n",
 
         Button("Tree Library", tree_library),
         Button("Favorites", favorites),
@@ -75,7 +75,7 @@ def index(state: State) -> Page:
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
     content = [
-        "# Tree Library\n"
+        "Tree Library\n"
     ]
 
     # LOOP REQUIREMENT
