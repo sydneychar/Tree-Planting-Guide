@@ -2,6 +2,7 @@ from bakery import assert_equal
 from drafter import *
 from dataclasses import dataclass
 
+set_website_style("xp")
 
 
 @dataclass
@@ -61,9 +62,9 @@ def index(state: State) -> Page:
     return Page(state, [
         "Tree Planting Guide",
 
-        "\nLearn how to plant trees properly!",
+        "Learn how to plant a tree properly!",
 
-        "\nThis site helps gardeners learn how to care for trees.\n",
+        "Click 'Tree Library' to start learning",
 
         Button("Tree Library", tree_library),
         Button("Favorites", favorites),
@@ -75,7 +76,7 @@ def index(state: State) -> Page:
 def tree_library(state: State) -> Page:
     """displays all 20 trees available in tree library"""
     content = [
-        "Tree Library\n"
+        "# Tree Library\n"
     ]
 
     # LOOP REQUIREMENT
